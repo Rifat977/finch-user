@@ -70,7 +70,7 @@ body {
 
 section {
     width: 100%;
-    padding-block: 10px;
+    padding-block: 5px;
 }
 
 .container {

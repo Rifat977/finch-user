@@ -9,8 +9,7 @@
         <div class="container" style="text-align: center;">
             <div class="hero__text">
                 <h4>Trade-in-offer</h4>
-                <h1>Super value deals</h1>
-                <h2>On all products</h2>
+                <h3>Super value deals On all products</h3>
                 <p style="color: aliceblue;">Save more with coupons & get up to 70% off!</p>
                 <router-link to="/shop">
                     <action-button btnvalue="Shop Now" />
@@ -95,6 +94,7 @@ export default {
     justify-content: center;
     height: calc(100vh - 65px);
     overflow: hidden;
+    padding-block: 10px;
 }
 
 .hero__image {

@@ -43,15 +43,18 @@ export default {
 }
 
 .ad2 {
-  /* margin-top: 3rem; */
-  gap: 1rem;
+  gap: 0rem;
 }
 
 @media (max-width: 670px) {
   .ad1,
   .ad2 {
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 0;
+  }
+
+  .ad2 advert-card {
+    margin-bottom: 0;
   }
 }
 </style>

@@ -58,7 +58,7 @@ article {
     padding: 0;
     color: white;
     min-height: calc(100vh - 65px);
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     overflow: hidden; /* To clip content if needed */
 }
 
@@ -123,7 +123,7 @@ article:hover button {
         min-height: auto;
         height: auto;
         aspect-ratio: 3 / 4; 
-        background-size: contain; 
+        background-size: fill; 
     }
 }
 </style>

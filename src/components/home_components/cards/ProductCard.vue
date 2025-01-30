@@ -1,5 +1,5 @@
 <template>
-    <div class="product__card">
+    <div class="product__card" @click="$router.push('/cart/' + productId)">
         <img
             :src="image_url"
             :alt="brand"
@@ -21,7 +21,7 @@
 
             <button
                 class="cart"
-                @click="$router.push('/cart/' + productId)"
+                
                 aria-label="View Item"
             >
                 <svg
@@ -71,6 +71,7 @@ export default {
     text-align: left;
     border-radius: 15px;
     color: #222;
+    cursor: pointer;
 }
 
 .product__image {

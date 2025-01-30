@@ -38,6 +38,7 @@ export default {
 <style>
 .products {
     text-align: center;
+    margin-block: 5rem;
 }
 
 .products h2 {
@@ -82,16 +83,27 @@ export default {
     padding-block: 4rem;
 }
 
-@media (max-width: 1200px) {
+/* Tablet View (2 per row) */
+@media (max-width: 768px) {
     .product__container {
-        justify-content: center;
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
     }
 }
 
+/* Mobile View (2 per row) */
 @media (max-width: 599px) {
     .product__container {
-        justify-content: center;
-        grid-template-columns: minmax(250px, 300px);
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 10px;
+        padding-block: 2rem;
+    }
+}
+
+/* Smallest screens (single column if needed) */
+@media (max-width: 400px) {
+    .product__container {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 15px;
     }
 }
 </style>
