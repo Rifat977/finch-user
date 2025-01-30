@@ -1,7 +1,7 @@
 <template>
     <section class="products">
         <h2>Relevant Products</h2>
-        <p class="highlight">Explore Related Products You May Love.</p>
+        <p class="highlight">Explore related you may love.</p>
 
         <!-- Swiper for Mobile -->
         <swiper
@@ -18,7 +18,6 @@
                 class="swiper__slide"
             >
                 <product-card
-                    class="swiper-card"
                     :productId="product._id"
                     :productName="product.name"
                     :brand="product.brand"
