@@ -9,7 +9,12 @@
             :slides-per-view="2"
             :space-between="15"
             :loop="true"
-            :pagination="{ clickable: true }"
+            :pagination="{
+                clickable: true,
+                el: '.swiper-pagination',
+                type: 'bullets',
+            }"
+            :modules="[pagination]"
             class="product__slider"
         >
             <swiper-slide
@@ -29,6 +34,8 @@
                     :in_stock="product.in_stock"
                 />
             </swiper-slide>
+            <!-- Add pagination div -->
+            <div class="swiper-pagination"></div>
         </swiper>
 
         <!-- Grid Layout for Larger Screens -->
@@ -55,6 +62,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 import ProductCard from "@/components/home_components/cards/ProductCard.vue";
@@ -72,6 +80,7 @@ export default {
     data() {
         return {
             isMobile: window.innerWidth <= 768,
+            pagination: Pagination,
         };
     },
     mounted() {
@@ -92,6 +101,7 @@ export default {
 .products {
     text-align: center;
     margin-block: 4rem;
+    position: relative;  /* Added for pagination positioning */
 }
 
 .products h2 {
@@ -113,13 +123,12 @@ export default {
 }
 
 /* Swiper Styles */
-
 .swiper__slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100% !important;  /* Force Swiper slides to be within the correct width */
-    flex: 0 0 auto; /* Prevent shrinking/overlapping */
+    width: 100% !important;
+    flex: 0 0 auto;
     box-sizing: border-box;
 }
 
@@ -127,6 +136,23 @@ export default {
 .swiper-slide > * {
     width: 100%;
     height: 100%;
+}
+
+/* Pagination Styles */
+.swiper-pagination {
+    position: relative;
+    margin-top: 20px;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #ddd;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #333;
 }
 
 /* Responsive Design */
