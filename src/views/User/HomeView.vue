@@ -26,7 +26,11 @@
     </section>
 
     <banner-section />
-    <new-arrivals :newArrivals="newArrivals" />
+    <section class="feature__section">
+        <div class="container">
+            <new-arrivals :newArrivals="newArrivals" />
+        </div>
+    </section>
     <news-letter />
     <main-footer />
 </template>
