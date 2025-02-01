@@ -1,7 +1,7 @@
 <template>
-    <section class="login grid-center">
+    <section class="login">
         <div class="login-box">
-            <router-link to="/">
+            <router-link to="/" class="close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
                     viewBox="0 0 16 16">
                     <path
@@ -55,7 +55,6 @@
 import ActionButton from "@/components/ActionButton.vue";
 import ButtonPreloader from "@/components/preloaders/ButtonPreloader.vue";
 import { mapActions } from "vuex";
-
 import axios from "axios";
 
 export default {
@@ -76,7 +75,6 @@ export default {
             this.showPassword = !this.showPassword;
         },
         async loginUser() {
-            // Send a POST request
             this.userLoggedIn = true;
             await axios({
                 method: "post",
@@ -105,75 +103,115 @@ export default {
 </script>
 
 <style scoped>
-.grid-center {
+/* Grid Centering */
+.login {
     display: grid;
     place-items: center;
-}
-
-.login {
-    background-color: var(--grey-2);
+    /* background-color: var(--grey-2); */
     height: 100vh;
 }
 
+/* Login Box Styles */
 .login-box {
-    text-align: center;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    padding: 50px 30px;
-    min-width: 320px;
-    margin-inline: auto;
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px 35px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
     position: relative;
+    text-align: center;
 }
 
-.login-box svg {
-    font-size: 15px;
+/* Close Button */
+.close-btn {
     position: absolute;
-    right: 20px;
     top: 20px;
+    right: 20px;
     cursor: pointer;
 }
 
-.login-box svg:hover {
+.close-btn svg {
+    font-size: 20px;
     color: var(--dim-blue);
 }
 
+/* Title */
 .login-box h3 {
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin-bottom: 30px;
 }
 
+/* Form */
 .login-box form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-block: 30px;
+    gap: 25px;
 }
 
-.login-box form button {
+/* Input Fields */
+.login-box input {
+    padding: 10px;
+    /* border: 1px solid var(--light-grey); */
+    border-radius: 8px;
+    font-size: 14px;
     width: 100%;
+    outline: none;
+    transition: border-color 0.3s;
 }
 
-.link {
-    font-size: 15px;
-    color: cornflowerblue;
+.login-box input:focus {
+    border-color: var(--dim-blue);
 }
 
-.link:hover {
-    color: var(--text);
-}
-
+/* Password Eye Icon */
 .form-group {
     position: relative;
 }
 
-.form-group input {
+.form-group svg {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Error Message */
+.weak {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+/* Submit Button */
+action-button {
     width: 100%;
 }
 
-.form-group svg {
-    position: absolute;
-    font-size: 17px;
-    cursor: pointer;
-    right: 10px;
-    top: 13px;
+/* Link */
+.link {
+    font-size: 14px;
+    color: cornflowerblue;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: var(--dim-blue);
+}
+
+/* Additional Text */
+p {
+    font-size: 14px;
+    color: var(--dark-grey);
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .login-box {
+        padding: 30px 20px;
+    }
 }
 </style>

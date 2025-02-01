@@ -13,6 +13,7 @@ export default {
 <style>
 /* Default Styles */
 @import url("https://fonts.googleapis.com/css?family=League+Spartan:100,200,300,regular,500,600,700,800,900");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
     /* Primary Colors */
@@ -33,7 +34,7 @@ export default {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "League Spartan", sans-serif;
+    font-family: "Poppins", sans-serif;
     /* font-display: swap; */
 }
 

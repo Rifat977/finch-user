@@ -1,4 +1,5 @@
 <template>
+    <topbar />
     <main-header />
     <section class="hero__section">
         <img 
@@ -42,6 +43,7 @@ import NewArrivals from "@/components/home_components/products/NewArrivals.vue";
 import AdvertSection from "@/components/home_components/AdvertSection.vue";
 import FeaturedProducts from "@/components/home_components/products/FeaturedProducts.vue";
 import ActionButton from "@/components/ActionButton.vue";
+import Topbar from "@/components/Topbar.vue";
 import MainHeader from "@/components/MainHeader.vue";
 import NewsLetter from "@/components/NewsLetter.vue";
 import MainFooter from "@/components/MainFooter.vue";
@@ -83,6 +85,7 @@ export default {
         FeaturedProducts,
         ActionButton,
         MainHeader,
+        Topbar,
         NewsLetter,
         MainFooter,
     },

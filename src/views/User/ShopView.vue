@@ -131,6 +131,21 @@ export default {
 </script>
 
 <style>
+.product__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 3rem 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .product__container {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 10px;
+        padding: 1rem;
+    }
+}
+
 .btn {
     border: none;
     background-color: #f2f2f2;

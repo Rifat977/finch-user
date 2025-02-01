@@ -32,6 +32,7 @@
                 <span>Home / {{ product.brand }}</span>
                 <h4>{{ product.name }}</h4>
                 <h4>{{ formattedPrice }}</h4>
+                <color-selector @color-selected="handleColorSelection" />
                 <select v-model="size">
                     <option disabled>Select Size</option>
                     <option>Medium</option>
@@ -76,6 +77,7 @@ import MainHeader from "@/components/MainHeader.vue";
 import ProductPreloader from "@/components/preloaders/ProductPreloader.vue";
 import MainFooter from "@/components/MainFooter.vue";
 import ReleventProducts from "@/components/home_components/products/ReleventProducts.vue";
+import ColorSelector from "@/components/ColorSelector.vue";
 
 
 import { mapActions, mapState } from "vuex";
@@ -91,6 +93,7 @@ export default {
         ReleventProducts,
         ProductPreloader,
         MainFooter,
+        ColorSelector,
     },
     data() {
         return {
@@ -101,6 +104,7 @@ export default {
             size: "Select Size",
             quantity: 1,
             validSize: false,
+            selectedColor: '',
         };
     },
     methods: {
@@ -108,6 +112,9 @@ export default {
         ...mapActions(["set_products"]),
         setActiveImage(image) {
             this.activeImage = this.product.images[image];
+        },
+        handleColorSelection(color) {
+            this.selectedColor = color;
         },
         addItemToCart() {
             if (this.size === "Select Size") {
@@ -117,6 +124,7 @@ export default {
                     ...this.product,
                     quantity: this.quantity,
                     size: this.size,
+                    color: this.selectedColor,
                 };
                 this.add_to_cart(item);
             }
