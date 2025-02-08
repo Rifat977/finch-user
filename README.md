@@ -1,29 +1,42 @@
-# Buy-It
+# Finch E-commerce
 
-## Project setup
+Finch is a modern e-commerce platform built using Vue.js on the frontend and Django REST Framework on the backend. It provides a seamless shopping experience with next-day delivery to home or free in-store pickup.
 
-```
-npm install
-```
+## Demo
+[Live Preview](https://finch-development.vercel.app/)
 
-### Compiles and hot-reloads for development
+## Features
+- User Authentication (Login/Signup)
+- Product Listings with Categories
+- Shopping Cart & Checkout
+- Order Tracking
+- Wishlist Feature
+- Discount Offers
+- Newsletter Subscription
+- Responsive Design
+- Secure Payment Integration
 
-```
-npm run serve
-```
+## Technologies Used
+### Frontend
+- Vue.js
+- Vue Router
+- Vuex (State Management)
+- Tailwind CSS
+- Axios
 
-### Compiles and minifies for production
+### Backend
+- Django
+- Django REST Framework (DRF)
+- PostgreSQL
+- JWT Authentication
 
-```
-npm run build
-```
 
-### Lints and fixes files
+## Deployment
+### Frontend
+Deployed using Vercel: [finch-development.vercel.app](https://finch-development.vercel.app/)
 
-```
-npm run lint
-```
+### Backend
+Deployed using a cloud-based solution with Mysql database.
 
-### Customize configuration
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
